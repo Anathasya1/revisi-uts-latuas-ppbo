@@ -22,12 +22,16 @@ public class KendaraanView {
     }
 
     public void render() {
-        this.printMenu();
-        int menu = CLIUtil.getInt();
+        int menu = -1;
         while (menu != 0) {
+            this.printMenu();
+            System.out.println("Pilihan menu utama: ");
+            menu = CLIUtil.getInt();
             switch (menu) {
                 case 1:
-                    handleTambahKendaraan();
+                    System.out.print("Tipe kendaraan: 1 = Mobil, 2 = Truk, 3 = Helikopter, 4 = Pesawat \nMasukkan Tipe Kendaraan: ");
+                    int tipe = CLIUtil.getInt();
+                    handleTambahKendaraan(tipe);
                     break;
                 case 2:
                     handlePrintKendaraan();
@@ -43,14 +47,15 @@ public class KendaraanView {
 
     }
 
-    private void handleTambahKendaraan() {
-        System.out
-                .print("Tipe kendaraan: 1 = Mobil, 2 = Truk, 3 = Helikopter, 4 = Pesawat \nMasukkan Tipe Kendaraan: ");
-        int tipe = CLIUtil.getInt();
+    private void handleTambahKendaraan(int tipe) {
+        if (tipe == 0) {
+            System.out.println("Batal nambahin");
+            return;
+        }
         if (tipe > 4 || tipe < 1) {
             System.out.println("tipe kendaraan tidak valid");
             return;
-        }
+        } 
 
         CLIUtil.getString();
         System.out.print("Masukkan nama kendaraan: ");
