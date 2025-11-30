@@ -38,44 +38,49 @@ public class KendaraanController {
         }
     }
 
-    public void add(BahanBakar bahanBakar, int kapasitasOrang, String nama) throws InvalidInputException{
-        validateInput(nama);
-        if (bahanBakar == null) {
-            throw new InvalidInputException("input bahan bakar tidak boleh kosong");
-        }
-        if (kapasitasOrang < 0) {
-            throw new InvalidInputException("Input jumlah orang tidka boleh negatif");
-        }
-        this.listKendaraan.add(new Mobil(bahanBakar, kapasitasOrang, nama));
+    public void addKendaraan(Kendaraan kendaraan){
+        this.listKendaraan.add(kendaraan);
     }
 
-    public void add(String nama, int jumlahRoda) throws InvalidInputException{
-        validateInput(nama);
-        if (jumlahRoda < 0) {
-            throw new InvalidInputException("Jumalah roda tidak boleh negatif");
-        }
-        this.listKendaraan.add(new Truk(nama, jumlahRoda));
-    }
+    //ini melanggar O di SOLID
+    // public void add(BahanBakar bahanBakar, int kapasitasOrang, String nama) throws InvalidInputException{
+    //     validateInput(nama);
+    //     if (bahanBakar == null) {
+    //         throw new InvalidInputException("input bahan bakar tidak boleh kosong");
+    //     }
+    //     if (kapasitasOrang < 0) {
+    //         throw new InvalidInputException("Input jumlah orang tidka boleh negatif");
+    //     }
+    //     this.listKendaraan.add(new Mobil(bahanBakar, kapasitasOrang, nama));
+    // }
 
-    public void add(int kapasitasOrang, String nama, int jumlahRoda, boolean pesawatTempur) throws InvalidInputException{
-        validateInput(nama);
-        if (kapasitasOrang < 0) {
-            throw new InvalidInputException("Input jumlah orang tidka boleh negatif");
-        }
-        if (jumlahRoda < 0) {
-            throw new InvalidInputException("Jumalah roda tidak boleh negatif");
-        }
-        this.listKendaraan.add(new Pesawat(kapasitasOrang, nama, jumlahRoda, pesawatTempur));
-    }
+    // public void add(String nama, int jumlahRoda) throws InvalidInputException{
+    //     validateInput(nama);
+    //     if (jumlahRoda < 0) {
+    //         throw new InvalidInputException("Jumalah roda tidak boleh negatif");
+    //     }
+    //     this.listKendaraan.add(new Truk(nama, jumlahRoda));
+    // }
 
-    public void add(int kapasitasOrang, String nama, int jumlahBalingBaling) throws InvalidInputException{
-        validateInput(nama);
-        if (kapasitasOrang < 0) {
-            throw new InvalidInputException("Input jumlah orang tidka boleh negatif");
-        }
-        if (jumlahBalingBaling < 0) {
-            throw new InvalidInputException("Jumalah roda tidak boleh negatif");
-        }
-        this.listKendaraan.add(new Helikopter(kapasitasOrang, nama, jumlahBalingBaling));
-    }
+    // public void add(int kapasitasOrang, String nama, int jumlahRoda, boolean pesawatTempur) throws InvalidInputException{
+    //     validateInput(nama);
+    //     if (kapasitasOrang < 0) {
+    //         throw new InvalidInputException("Input jumlah orang tidka boleh negatif");
+    //     }
+    //     if (jumlahRoda < 0) {
+    //         throw new InvalidInputException("Jumalah roda tidak boleh negatif");
+    //     }
+    //     this.listKendaraan.add(new Pesawat(kapasitasOrang, nama, jumlahRoda, pesawatTempur));
+    // }
+
+    // public void add(int kapasitasOrang, String nama, int jumlahBalingBaling) throws InvalidInputException{
+    //     validateInput(nama);
+    //     if (kapasitasOrang < 0) {
+    //         throw new InvalidInputException("Input jumlah orang tidka boleh negatif");
+    //     }
+    //     if (jumlahBalingBaling < 0) {
+    //         throw new InvalidInputException("Jumalah roda tidak boleh negatif");
+    //     }
+    //     this.listKendaraan.add(new Helikopter(kapasitasOrang, nama, jumlahBalingBaling));
+    // }
 }
