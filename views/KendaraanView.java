@@ -113,5 +113,6 @@ public class KendaraanView {
     private void handleSortKendaraan() {
         this.kendaraanController.sortByKapasitas();
         System.out.println("Kendaraan telah diurutkan");
+        handlePrintKendaraan();
     }
 }
